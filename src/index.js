@@ -9,6 +9,7 @@ export default class Entrance extends Component{
         return(
             <View style={styles.container}>
                 <AppNavigator />
+                <Text></Text>
             </View>
         )
     }
