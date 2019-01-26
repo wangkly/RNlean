@@ -6,8 +6,17 @@ import {View,Text,StyleSheet} from 'react-native';
 import AppNavigator from './app-navigator';
 
 import {store} from './store';
+import {msg} from './msg';
 
 export default class Entrance extends Component{
+
+    componentDidMount(){
+        msg.on('app:toast',this._showToast)
+    }
+
+    componentWillUnmount(){
+        msg.on('app:toast',this._showToast)
+    }
 
     render(){
         return(
@@ -17,6 +26,10 @@ export default class Entrance extends Component{
                 </View>
             </Provider>
         )
+    }
+
+    _showToast(param){
+        console.log('showToast ==>',param)
     }
 
 }

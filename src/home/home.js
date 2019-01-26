@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {View,Text,Button,StyleSheet} from 'react-native';
-
+import {msg} from '../msg'
 export default class HomeScreen extends React.Component {
     render() {
       let {count,onIncreasePress,onDecreasePress} = this.props;
@@ -17,6 +17,10 @@ export default class HomeScreen extends React.Component {
                 onPress={() => onDecreasePress()}
               />
           </View>
+          <Button
+            title="show toast"
+            onPress={() => msg.emit('app:toast',{type:'info'})}
+          />
           <Button
             title="Go to Details"
             onPress={() => this.props.navigation.navigate('Detail')}
