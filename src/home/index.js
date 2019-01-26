@@ -1,17 +1,10 @@
-import React,{Component} from 'react';
-import {View,Text,Button} from 'react-native';
+import {connect} from 'react-redux';
+import HomeScreen from './home';
+import {mapDispatchToProps} from './mapdispatchtoprops';
+import {mapStateToProps} from './mapstatetoprops';
 
-export default class HomeScreen extends React.Component {
-    render() {
-      return (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-          <Text>Home Screen</Text>
-          <Button
-            title="Go to Details"
-            onPress={() => this.props.navigation.navigate('Detail')}
-          />
-        </View>
-      );
-    }
-  }
+const wraper = connect(mapStateToProps,mapDispatchToProps)(HomeScreen)
+
+export default wraper;
+
 

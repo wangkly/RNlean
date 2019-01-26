@@ -13,7 +13,7 @@ function delay(){
 function* beforeAdd(action){
     yield call(delay);
     console.log('actionXXX==>',action)
-    yield put(Object.assign({},{...action},{type:"ADD"}))
+    yield put(Object.assign({},{...action},{type:"increase"}))
 }
 
 function* mySaga(){

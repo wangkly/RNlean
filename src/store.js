@@ -1,5 +1,5 @@
 import {createStore,combineReducers,applyMiddleware} from 'redux';
-import HomeReducer from './reducers/home-reduer';
+import {HomeReducer} from './reducers/home-reduer';
 
 import createSagaMiddleware from 'redux-saga'
 import mySaga from './saga'
@@ -12,6 +12,6 @@ let store = createStore(rootReducer,applyMiddleware(sageMiddleware));
 
 sageMiddleware.run(mySaga);
 
-export default store;
+exports.store = store;
 
 
