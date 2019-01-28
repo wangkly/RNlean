@@ -6,7 +6,7 @@ import {View,Text,StyleSheet} from 'react-native';
 import AppNavigator from './app-navigator';
 
 import {store} from './store';
-import {msg} from './msg';
+import msg from './msg';
 
 export default class Entrance extends Component{
 

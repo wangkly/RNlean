@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {View,Text,Button,StyleSheet} from 'react-native';
-import {msg} from '../msg'
+import msg from '../msg'
 export default class HomeScreen extends React.Component {
     render() {
       let {count,onIncreasePress,onDecreasePress} = this.props;
