@@ -1,5 +1,5 @@
 import {call,put,takeEvery,takeLatest} from 'redux-saga/effects';
-
+import Api from './Api';
 function delay(){
     return new Promise((resolve)=>{
         setTimeout(
@@ -11,8 +11,8 @@ function delay(){
 }
 
 function* beforeAdd(action){
-    yield call(delay);
-    console.log('actionXXX==>',action)
+    let resp =  yield call(Api.getUser);
+    console.log('beforeAdd call ==>resp',resp)
     yield put(Object.assign({},{...action},{type:"increase"}))
 }
 

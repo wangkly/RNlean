@@ -1,15 +1,7 @@
-import React,{Component} from 'react';
-import {View,Text} from 'react-native';
 
-export default class Detail extends Component{
+import {connect} from 'react-redux';
+import MyList from './my-list';
 
-    render(){
-        return(
-            <View>
-                <Text>Detail</Text>
-            </View>
-        )
-    }
+const list = connect()(MyList)
 
-
-}
+export default list;

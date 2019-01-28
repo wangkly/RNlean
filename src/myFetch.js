@@ -6,18 +6,13 @@ function myFetch(url,req){
         headers: {
           Accept: 'application/json; charset=utf-8',
           'Content-Type': 'application/json',
-          credentials: 'omit',
-          originType,
-          supId: supId || '',
-          Authorization: sessionId,
-          Platform: Platform.OS,
-          Version: versionMap[Platform.OS]
+          credentials: 'omit'
         }
       };
 
-      let merge = assign({}, request, req);
+      let merge = Object.assign({}, request, req);
       if (req && req.headers) {
-        merge.headers = assign({}, request.headers, req.headers); // assign不是deep merge;
+        merge.headers = Object.assign({}, request.headers, req.headers); // assign不是deep merge;
       }
 
       return new Promise(function(resolve,reject){
