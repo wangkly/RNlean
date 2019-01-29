@@ -11,13 +11,19 @@ function delay(){
 }
 
 function* beforeAdd(action){
-    let resp =  yield call(Api.getUser);
-    console.log('beforeAdd call ==>resp',resp)
+    yield call(delay);
+
     yield put(Object.assign({},{...action},{type:"increase"}))
+}
+
+function* initUser(action){
+    let resp = yield call(Api.getUser,action.param);
+    yield put({type:'initUsers',data:resp.content})
 }
 
 function* mySaga(){
     yield takeEvery("beforeADD",beforeAdd)
+    yield takeLatest("initUser",initUser)
 }
 
 // function* mySaga(){
