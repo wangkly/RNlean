@@ -74,17 +74,19 @@ const styles = StyleSheet.create({
     imgWrap:{
         flexDirection:'column',
         alignItems:'center',
-        justifyContent:'center',
+        justifyContent:'flex-start',
+        paddingTop:5,
         width:imgWH ,
-        height:imgWH ,
+        height:imgWH *2,
         marginLeft:10,
         marginTop:10,
         borderWidth:1 ,
+        borderColor:'#999999'
         
     },
     img:{
         width: imgWH * 0.8,
-        height: imgWH * 0.8,
+        height: imgWH ,
     }
 
 })
