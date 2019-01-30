@@ -4,6 +4,7 @@ import DetailScreen from './detail';
 import UserScreen from './users';
 import TabsScreen from './tabs';
 import TabBarScreen from './tabbar';
+import VideoScreen from './video';
 
 const AppNavigator = createStackNavigator({
     Home:{
@@ -12,7 +13,8 @@ const AppNavigator = createStackNavigator({
     Detail:DetailScreen,
     User:UserScreen,
     Tabs:TabsScreen,
-    Tabbar:TabBarScreen
+    Tabbar:TabBarScreen,
+    Video:VideoScreen,
 },
 {
     initialRouteName:'Home'

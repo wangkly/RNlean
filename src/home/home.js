@@ -38,6 +38,10 @@ export default class HomeScreen extends React.Component {
             title="Go to Tabbar"
             onPress={() => this.props.navigation.navigate('Tabbar')}
           />
+          <Button
+            title="Go to Video"
+            onPress={() => this.props.navigation.navigate('Video')}
+          />
         </View>
       );
     }
