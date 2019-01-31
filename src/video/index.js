@@ -2,6 +2,7 @@ import React,{Component}from 'react';
 import {StyleSheet,View,TouchableOpacity,Platform,TouchableWithoutFeedback,Button,Text,Dimensions} from 'react-native';
 import Video from 'react-native-video';
 import {Icon,Slider,Progress} from '@ant-design/react-native';
+import {formatSeconds} from '../util';
 const exurl ='https://ugcws.video.gtimg.com/uwMRJfz-r5jAYaQXGdGnCtD0ZkRh8BgOUQePMGh65cs/m0682ssvvdm.p712.1.mp4?sdtfrom=v1010&guid=753bc5401a9ec1d21455b3345e425f15&vkey=F7DE53D7D0C66D616D74C62C1676182A9EC406C8E62295915C15F2375B3B500E2C1967AF21B2A582ED31A796FF636C0281CC210658215F10D1104023C5C2127957AEA7E7F100D221B9593091531727FED7ED3A7B2761D5CBC85B0AFC490E02994EA6208A7D077849541963EC317DDFC5CC80AEA08788252F';
 
 const screenW = Dimensions.get('window').width;
@@ -46,12 +47,13 @@ export default class VideoView extends Component{
 
                     <View style={styles.bottom}>
                        <View style={styles.progress}>
-                            {/* <Text style={styles.time}></Text> */}
-                            <View>
-                                <Slider min={0} max={this.state.duration} value ={this.state.currentTime} onAfterChange={(value)=>{this.changeProgress(value)}}/>
-                            </View>
-                            {/* <Text style={styles.time}></Text> */}
-                            {/* <Progress percent={90}  /> */}
+                            <Text style={styles.time}>{formatSeconds(this.state.currentTime||0)}</Text>
+                                <View style={styles.slider}>
+                                    <Slider min={0} max={this.state.duration} 
+                                            value ={this.state.currentTime} 
+                                            onAfterChange={(value)=>{this.changeProgress(value)}}/>
+                                </View>
+                            <Text style={styles.time2}>{formatSeconds(this.state.duration||0)}</Text>
                         </View>
                         <View style={styles.control}>
                         {
@@ -121,11 +123,24 @@ const styles = StyleSheet.create({
     },
     progress:{
         height:50,
+        // width:screenW -100
         // flexDirection:'row',
         // alignItems:'center'
     },
+    slider:{
+        marginTop:10,
+        marginLeft:20,
+        marginRight:20
+    },  
     time:{
-
+        width:60,
+        position:'absolute',
+        left:0
+    },
+    time2:{
+        width:60,
+        position:'absolute',
+        right:0
     },
     control:{
         flexDirection:'row',
