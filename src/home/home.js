@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {View,Text,Button,StyleSheet} from 'react-native';
+import {Icon,Slider,Progress} from '@ant-design/react-native';
 import msg from '../msg'
 export default class HomeScreen extends React.Component {
     render() {
@@ -42,6 +43,10 @@ export default class HomeScreen extends React.Component {
             title="Go to Video"
             onPress={() => this.props.navigation.navigate('Video')}
           />
+           <View>
+              <Text>Default settings</Text>
+              <Slider />
+          </View>
         </View>
       );
     }

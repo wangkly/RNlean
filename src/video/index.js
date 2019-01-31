@@ -47,7 +47,9 @@ export default class VideoView extends Component{
                     <View style={styles.bottom}>
                        <View style={styles.progress}>
                             {/* <Text style={styles.time}></Text> */}
-                            <Slider min={0} max={this.state.duration} value ={this.state.currentTime} onAfterChange={(value)=>{this.changeProgress(value)}}/>
+                            <View>
+                                <Slider min={0} max={this.state.duration} value ={this.state.currentTime} onAfterChange={(value)=>{this.changeProgress(value)}}/>
+                            </View>
                             {/* <Text style={styles.time}></Text> */}
                             {/* <Progress percent={90}  /> */}
                         </View>
@@ -119,8 +121,8 @@ const styles = StyleSheet.create({
     },
     progress:{
         height:50,
-        flexDirection:'row',
-        alignItems:'center'
+        // flexDirection:'row',
+        // alignItems:'center'
     },
     time:{
 
