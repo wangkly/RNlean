@@ -14,7 +14,13 @@ const AppNavigator = createStackNavigator({
     User:UserScreen,
     Tabs:TabsScreen,
     Tabbar:TabBarScreen,
-    Video:VideoScreen,
+    Video:{
+        navigationOptions:({})=>({
+            // title:'video',
+            header:null
+        }),
+        screen:VideoScreen
+    },
 },
 {
     initialRouteName:'Home'
